@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8" />
+  </head>
+  <script src="bubbleSort.js"></script>
+  <script src="selectionSort.js"></script>
+  <script src="quickSort.js"></script>
+  <script src="insertionSort.js"></script>
+  <script lang="js">
+    function createArray() {
+      console.log('INICIO')
+      const sizeArray = document.getElementById('sizeArray').value
+      const choosedAlgorithm = document.getElementById('chooseAlgorithm').value
+
+      let randomArray = Array.from({ length: +sizeArray }, () => Math.floor(Math.random() * 100));
+
+      switch (choosedAlgorithm) {
+        case "Bubble sort":
+          console.log("Bubble sort")
+          console.log("before", randomArray)
+          console.time()
+          randomArray = bubbleSort(randomArray)
+          console.timeEnd()
+          console.log("before", randomArray)
+          break;
+
+        case "Selection sort":
+          console.log("Selection sort")
+          console.log("before", randomArray)
+          console.time()
+          randomArray = selectionSort(randomArray)
+          console.timeEnd()
+          console.log("before", randomArray)
+
+          break;
+        case "Quick sort":
+          console.log("Quick sort")
+          console.log("before", randomArray)
+          console.time()
+          randomArray = quickSort(randomArray)
+          console.timeEnd()
+          console.log("before", randomArray)
+          break;
+
+        case "Insertion sort":
+          console.log("Insertion sort")
+          console.log("before", randomArray)
+          console.time()
+          randomArray = insertionSort(randomArray)
+          console.timeEnd()
+          console.log("before", randomArray)
+          break;
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: black;
+    }
+
+    p {
+      color: white;
+    }
+    button {
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <label>Tamanho do array</label>
+    <select id="chooseAlgorithm">
+      <option>Bubble sort</option>
+      <option>Selection sort</option>
+      <option>Quick sort</option>
+      <option>Insertion sort</option>
+    </select>
+    <input id="sizeArray" type="number" />
+    <button onclick="createArray()">Criar Array</button>
+  </body>
+</html>
