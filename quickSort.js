@@ -23,9 +23,3 @@ function quickSort(arr) {
   // Recursivamente ordenar as duas metades (menores e maiores)
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
-
-// Exemplo de uso
-// const arr = [10, 7, 8, 9, 1, 5];
-// console.log("Array Original:", arr);
-// const sortedArr = quickSort(arr);
-// console.log("Array Ordenado:", sortedArr);
